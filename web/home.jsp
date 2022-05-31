@@ -68,7 +68,7 @@
 
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="https://phelieumienbac.net/wp-content/uploads/2021/06/thu-mua-phe-lieu-sat-thep-2.jpg" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -89,7 +89,7 @@
                             <!-- Sale badge-->
                             <!--<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>-->
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="https://tse3.mm.bing.net/th?id=OIP.USqlcQnofgaLxm3YFKwrUwHaFj&pid=Api&P=0&w=220&h=165" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -119,7 +119,7 @@
                             <!-- Sale badge-->
                             <!--<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>-->
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="https://tse3.mm.bing.net/th?id=OIP.7hQqpWP4yAJYAniNbQqRVQHaF1&pid=Api&P=0&w=208&h=163" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -139,7 +139,7 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="https://tse3.mm.bing.net/th?id=OIP.hTAAxVR-jYtcTH2vzHUo_gHaEw&pid=Api&P=0&w=295&h=189" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
