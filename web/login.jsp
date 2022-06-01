@@ -37,8 +37,8 @@
         <div class="w3layoutscontaineragileits" style="margin: 60px auto">
             <h2>Login here</h2>
             <form action="MainController" method="POST" onsubmit="return validateForm()">
-                <input type="text" name="userID" required="" placeholder="userID"/>
-                <input type="password" name="password" required="" placeholder="password"/>
+                <input type="text" name="userID" required="" placeholder="userID" style="padding-left: 25px"/>
+                <input type="password" name="password" required="" placeholder="password"  style="padding-left: 25px" />
                 <ul class="agileinfotickwthree">
                     <li>
                         <input type="checkbox" id="brand1" value="">
