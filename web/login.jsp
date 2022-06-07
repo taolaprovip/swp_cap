@@ -36,9 +36,12 @@
 
         <div class="w3layoutscontaineragileits" style="margin: 60px auto">
             <h2>Login here</h2>
-            <form action="MainController" method="POST" onsubmit="return validateForm()">
-                <input type="text" name="userID" required="" placeholder="userID"/>
-                <input type="password" name="password" required="" placeholder="password"/>
+            
+            
+            <!--form login-->
+            <form action="Maincontroller" method="POST">   <!-- onsubmit="return validateForm()" --> 
+                <input type="text" name="phone" required="" placeholder="phone" style="padding-right: 30px"/>
+                <input type="password" name="password" required="" placeholder="password" style="padding-right: 30px"/>
                 <ul class="agileinfotickwthree">
                     <li>
                         <input type="checkbox" id="brand1" value="">
@@ -51,11 +54,11 @@
                 <div class="g-recaptcha" data-sitekey="6LfietMeAAAAAFCkqwzohGa6O6PrfUoSLJE5bVSH"></div><br/>
                 <div class="g-signin2" data-onsuccess="onSignIn"></div><br/>
                 <div class="aitssendbuttonw3ls">
-                    <input type="submit" name="action" value="Login"/>
-                    <p> To register new account <span>→</span> <a class="w3_play_icon1" href="#small-dialog1"> Click Here</a></p>
+                    <input type="submit" name="btAction" value="Login"/>
+                    <p> To register new account <span>→</span> <a class="w3_play_icon1" href="register.jsp"> Click Here</a></p>
                     <div class="clear"></div>
                 </div>
-                <script type="text/javascript" >
+<!--                <script type="text/javascript" >
                     function validateForm() {
                         if (grecaptcha.getResponse()) {
                             return true;
@@ -64,8 +67,10 @@
                             return false;
                         }
                     }
-                </script>
+                </script>-->
             </form>
+            
+              <!--form login-->
         </div>
 
         <!-- for register popup -->

@@ -1,36 +1,32 @@
-package controller;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package controller;
+
+import dao.UserDAO;
+import dto.UserDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Admin
  */
-public class Maincontroller extends HttpServlet {
+@WebServlet(name = "LoginController", urlPatterns = {"/LoginController"})
+public class LoginController extends HttpServlet {
 
-//    private static final String ERROR = "login.jsp";
-    private static final String ERROR = "error.jsp";
-    private static final String SEARCH_SELLER_CONTROLLER = "SearchSellerController";
-    private static final String SEARCH_BUYER_CONTROLLER = "SearchBuyerController";
-    private static final String LOGIN_CONTROLLER = "LoginController_2";
-    private static final String LOGOUT_CONTROLLER = "LogoutController";
-//    private static final String SELL_CONTROLLER = "SellController";
-    private static final String REGISTER_CONTROLLER = "RegisterController";
-    private static final String SEARCH_PRODUCT = "SearchProductController";
-    private static final String ADD_SELL_PRODUCT = "AddController";
-    private static final String SELL_UPDATE_PRODUCT = "SellUpdateController";
-      private static final String SEE_DETAIL_TO_BUY = "SeeDetailToBuyController";
-//    private static final String PRODUCT_DETAIL = "productDetail.jsp";
+//    private static final String SELLER_PAGE = "MainController?action=Search&search=&index=1";
+    private static final String SELLER_PAGE = "homeSeller.jsp";
+        private static final String BUYER_PAGE = "homeBuyer.jsp";
+    private static final String ERROR = "login.jsp";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -44,38 +40,34 @@ public class Maincontroller extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+
         String url = ERROR;
-        try {
-            String btAction = request.getParameter("btAction");
-
-            if (btAction.equals("Login")) {
-                url = LOGIN_CONTROLLER;
-
-            } else if (btAction.equals("SearchSeller")) {
-                url = SEARCH_SELLER_CONTROLLER;
-
-            } else if (btAction.equals("SearchBuyer")) {
-                url = SEARCH_BUYER_CONTROLLER;
-//            } else if (btAction.equals("productDetail")) {
-//                url = PRODUCT_DETAIL;
-
-            } else if (btAction.equals("Logout")) {
-                url = LOGOUT_CONTROLLER;
-            } else if (btAction.equals("Register")) {
-                url = REGISTER_CONTROLLER;
-            } else if (btAction.equals("Search Product By Name")) {
-                url = SEARCH_PRODUCT;
-            } else if (btAction.equals("Sell")) {
-                url = ADD_SELL_PRODUCT;
-            } else if (btAction.equals("Sell_Update")) {
-                url = SELL_UPDATE_PRODUCT;
-            }else if(btAction.equals("See detail to buy")){
-                url = SEE_DETAIL_TO_BUY; 
-            }
-        } catch (Exception e) {
-        } finally {
-            request.getRequestDispatcher(url).forward(request, response);
-        }
+//        try {
+//            String phone = request.getParameter("phone");
+//            String pass = request.getParameter("pass");
+//            UserDAO dao = new UserDAO();
+//            HttpSession session = request.getSession();
+//            session.invalidate();
+//            session = request.getSession();
+//            UserDTO loginUser = dao.checkLogin(phone, pass);
+//            if (loginUser != null) {
+//                session.setAttribute("LOGIN_USER", loginUser);
+//                String roleID = loginUser.getRoleID();
+////                String status = loginUser.getStatus();
+//                if (("BER").equals(roleID)) {     //buyer
+//                    url = BUYER_PAGE;
+//                } else if (("US").equals(roleID)) {
+//                    url = SELLER_PAGE;
+//                } else {
+//                    request.setAttribute("ERROR_MESSAGE", "Your role is not support!");
+//                }
+//            } else {
+//                request.setAttribute("ERROR_MESSAGE", "Incorrect userID or password!");
+//            }
+//        } catch (Exception e) {
+//        } finally {
+//            request.getRequestDispatcher(url).forward(request, response);
+//        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

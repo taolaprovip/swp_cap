@@ -13,6 +13,7 @@
         <link href="css/homeStyle.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
                 <a class="navbar-brand" href="#!">Veca</a>
@@ -31,10 +32,16 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex mx-auto" >
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    
+                    <!--search product-->
+                    
+                    <form class="d-flex mx-auto" action="Maincontroller" method="get" >
+                        <input class="form-control me-2" type="text" placeholder="Search" name="txtSearch">
+                        <button class="btn btn-outline-success" type="submit" name="btAction" value="Search">Search</button>
                     </form>
+                    
+                    <!--search product-->
+                    
                     <form class="d-flex my-2">
                         <button class="btn btn-outline-dark" type="submit">
                             <i class="bi-cart-fill me-1"></i>
@@ -58,7 +65,7 @@
             </div>
         </header>
         <!-- Section-->
-        <section class="py-5">
+        <section class="py-5">0
 
             <div class="container px-4 px-lg-5 mt-5">
                 <h3>Loại phế liệu</h3>
@@ -68,7 +75,7 @@
 
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://phelieumienbac.net/wp-content/uploads/2021/06/thu-mua-phe-lieu-sat-thep-2.jpg" alt="..." />
+                            <img class="card-img-top" src="./images/FE.jpg" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -132,7 +139,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="productDetail.jsp">Product Detail</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="productDetailBeforLogin.jsp">Product Detail</a></div>
                             </div>
                         </div>
                     </div>

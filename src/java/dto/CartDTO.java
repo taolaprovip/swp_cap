@@ -1,0 +1,106 @@
+package dto;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ *
+ * @author phamt
+ */
+public class CartDTO {
+
+    private Map<String, Order> cart;
+
+    public CartDTO(Map<String, Order> cart) {
+        this.cart = cart;
+    }
+
+    public CartDTO() {
+    }
+
+    public Map<String, Order> getCart() {
+        return cart;
+    }
+
+    public void setCart(Map<String, Order> cart) {
+        this.cart = cart;
+    }
+
+//    public double getTotal() {
+//        double total = 0;
+//        if (this.cart.isEmpty()) {
+//            return 0;
+//        }
+//        for (ProductDTO prod : this.cart.values()) {
+//            total += prod.getProductPrice()* prod.getQuantity();  
+//        }
+//        return total;
+//    }
+
+//    public int getQuantityProduct(String productID) {
+//        int quantity = 0;
+//        if (this.cart == null) {
+//            return 0;
+//        } else {
+//            for (ProductDTO prod : this.cart.values()) {
+//                if (prod.getProductID().equals(productID)) {
+//                    return prod.getQuantity();
+//                } else {
+//                    return 0;
+//                }
+//            }
+//        }
+//        return quantity;
+//    }
+
+    public List<Order> getList() {
+        List<Order> list = new ArrayList<Order>();
+        for (Order prod : this.cart.values()) {
+            list.add(prod);
+        }
+        if (!list.isEmpty()) {
+            return list;
+        }
+        return null;
+    }
+//
+    public void add(ProductDTO prod) throws SQLException {
+        if (this.cart == null) {
+            this.cart = new HashMap();
+        }
+        if (this.cart.containsKey(prod.getProductID())) {
+            int currentQuantity = this.cart.get(prod.getProductID()).getQuantity();
+            CheckQuantityProductDAO dao = new CheckQuantityProductDAO();
+            if (dao.checkQuantity(prod.getProductID(), currentQuantity + prod.getQuantity())) {
+                prod.setQuantity(currentQuantity + prod.getQuantity());
+            } else {
+                prod.setQuantity(currentQuantity);
+            }
+        }
+        cart.put(prod.getProductID(), prod);
+    }
+
+    public void delete(String id) {
+        if (this.cart == null) {
+            return;
+        }
+        if (this.cart.containsKey(id)) {
+            this.cart.remove(id);
+        }
+    }
+//
+//    public void update(String id, ProductDTO newProd) throws SQLException {
+//        if (this.cart == null) {
+//            return;
+//        }
+//        if (this.cart.containsKey(id)) {
+//            CheckQuantityProductDAO dao = new CheckQuantityProductDAO();
+//            if (dao.checkQuantity(newProd.getProductID(), newProd.getQuantity()) && newProd.getQuantity() > 0) {
+//                this.cart.replace(id, newProd);
+//            }
+//        }
+//    }
+}
