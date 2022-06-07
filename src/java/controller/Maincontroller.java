@@ -30,6 +30,7 @@ public class Maincontroller extends HttpServlet {
     private static final String ADD_SELL_PRODUCT = "AddController";
     private static final String SELL_UPDATE_PRODUCT = "SellUpdateController";
       private static final String SEE_DETAIL_TO_BUY = "SeeDetailToBuyController";
+//      private static final String UPDATE_ACCOUNT = "UpdateAccountController";
 //    private static final String PRODUCT_DETAIL = "productDetail.jsp";
 
     /**
@@ -72,6 +73,7 @@ public class Maincontroller extends HttpServlet {
             }else if(btAction.equals("See detail to buy")){
                 url = SEE_DETAIL_TO_BUY; 
             }
+            
         } catch (Exception e) {
         } finally {
             request.getRequestDispatcher(url).forward(request, response);

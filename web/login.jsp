@@ -36,12 +36,18 @@
 
         <div class="w3layoutscontaineragileits" style="margin: 60px auto">
             <h2>Login here</h2>
+<<<<<<< HEAD
             
             
             <!--form login-->
             <form action="Maincontroller" method="POST">   <!-- onsubmit="return validateForm()" --> 
                 <input type="text" name="phone" required="" placeholder="phone" style="padding-right: 30px"/>
                 <input type="password" name="password" required="" placeholder="password" style="padding-right: 30px"/>
+=======
+            <form action="MainController" method="POST" onsubmit="return validateForm()">
+                <input type="text" name="userID" required="" placeholder="userID" style="padding-left: 25px"/>
+                <input type="password" name="password" required="" placeholder="password"  style="padding-left: 25px" />
+>>>>>>> 34bafc204b30315824759294737017839b9da731
                 <ul class="agileinfotickwthree">
                     <li>
                         <input type="checkbox" id="brand1" value="">

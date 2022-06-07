@@ -44,7 +44,9 @@ public class ProductDAO {
                     String image = rs.getString("image");
                     String userID = rs.getString("userID");
 
-                    listProduct.add(new ProductDTO(productID, productName, productName, productID, userID));
+                    listProduct.add(new ProductDTO(productID, productName, description, image, userID));
+                    
+//                    String productID, String productName, String productDesc, String productImg, String userID) 
                 }
             }
         } catch (Exception e) {

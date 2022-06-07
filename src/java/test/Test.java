@@ -20,15 +20,18 @@ import java.util.Date;
 public class Test {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-      UserDAO d = new UserDAO();
+        UserDAO d = new UserDAO();
 //      boolean b = d.createUser("tes1", "090", "tes", "tes", "tes", "sdf", "tes", "tes");
 
 //        System.out.println( d.checkLogin("1", "2").getRolID());
 //        
-//        ProductDAO d2 = new ProductDAO();
-//        System.out.println(d2.getListProductSearchByName("nhom"));
-        
-        OrderDAO d3 = new OrderDAO();
-        System.out.println(d3.getListOrderByUserID("test"));
+        ProductDAO d2 = new ProductDAO();
+        System.out.println(d2.getListProductBeSell());
+//        OrderDAO d3 = new OrderDAO();
+//        System.out.println(d3.getListOrderByUserID("test"));
+        UserDAO dao = new UserDAO();
+//        System.out.println(dao.updateAccountProfile("123", "testupdate", "test@", "female", "2020-2-2", "xung1985"));
     }
 }
+
+//String phone, String fullName, String email, String gender, String DOB,String userID)

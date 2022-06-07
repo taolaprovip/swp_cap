@@ -71,7 +71,7 @@ public class ProductDTO {
 
     @Override
     public String toString() {
-        return getProductID() + " " +getUserID();
+        return getProductID() + " " +getUserID() + " " +getProductImg();
     }
     
     

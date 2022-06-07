@@ -37,17 +37,19 @@
             <form action="Maincontroller" method="get">
 
                 <div class="form-group">
+                    
+                    <input type="hidden" name="userID" value="<%=loginUser.getUserID()%>"></inpu>
                     <p><label for="phone">Phone</label></p>
-                    <input type="text" name="phone" id="phone" value="<%=loginUser.getPhone()%>" readonly="">
+                    <input type="text" name="phone" id="phone" value="<%=loginUser.getPhone()%>" >
                     <p><label for="fullName">Full name</label></p>
-                    <input type="text" name="fullName" id="fullName" value="<%=loginUser.getFullName()%>" readonly="">
+                    <input type="text" name="fullName" id="fullName" value="<%=loginUser.getFullName()%>" >
                     <p><label for="Email">Email</label></p>
-                    <input type="text" name="Email" id="Email" value="<%=loginUser.getEmail()%>" readonly="">
+                    <input type="text" name="Email" id="Email" value="<%=loginUser.getEmail()%>" >
                     <p><label for="gender">Gender</label></p>
-                    <input type="text" name="gender" id="gender" value="<%=loginUser.getSex()%>" readonly="">
+                    <input type="text" name="gender" id="gender" value="<%=loginUser.getSex()%>" >
 
                     <p><label for="DOB">DOB</label></p>
-                    <input type="text" name="DOB" id="DOB" value="<%=loginUser.getBirthday()%>" readonly="">
+                    <input type="text" name="DOB" id="DOB" value="<%=loginUser.getBirthday()%>">
 
 
 <!--

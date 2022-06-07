@@ -155,7 +155,7 @@
 
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="<%=listProduct.get(i).getProductImg()%>" alt="..." />
+                            <img style="width: 269px; height: 161px" class="card-img-top" src="<%=listProduct.get(i).getProductImg()%>" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -170,7 +170,7 @@
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="productDetail.jsp?productID=<%=listProduct.get(i).getProductID()%>&productName=<%=listProduct.get(i).getProductName()%>&productImg=<%=listProduct.get(i).getProductImg()%>&productDesc=<%=listProduct.get(i).getProductDesc()%>">Product Detail</a></div>
                             </div>
                         </div>
-                    </div>
+                    </div>0
 
                     <% }%>
 

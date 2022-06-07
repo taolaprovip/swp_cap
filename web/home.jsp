@@ -75,7 +75,12 @@
 
                         <div class="card h-100">
                             <!-- Product image-->
+<<<<<<< HEAD
                             <img class="card-img-top" src="./images/FE.jpg" alt="..." />
+=======
+                            <img class="card-img-top" src="https://phelieumienbac.net/wp-content/uploads/2021/06/thu-mua-phe-lieu-sat-thep-2.jpg" alt="..." style="width: 250x; height: 174px"/>    
+  
+>>>>>>> 34bafc204b30315824759294737017839b9da731
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -96,7 +101,7 @@
                             <!-- Sale badge-->
                             <!--<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>-->
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://tse3.mm.bing.net/th?id=OIP.USqlcQnofgaLxm3YFKwrUwHaFj&pid=Api&P=0&w=220&h=165" alt="..." />
+                            <img class="card-img-top" src="https://tse3.mm.bing.net/th?id=OIP.USqlcQnofgaLxm3YFKwrUwHaFj&pid=Api&P=0&w=220&h=165" alt="..." style="width: 250x; height: 174px"/>
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -145,8 +150,8 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://tse3.mm.bing.net/th?id=OIP.hTAAxVR-jYtcTH2vzHUo_gHaEw&pid=Api&P=0&w=295&h=189" alt="..." />
+                            <!-- Product image--> 
+                            <img class="card-img-top" src="https://tse3.mm.bing.net/th?id=OIP.hTAAxVR-jYtcTH2vzHUo_gHaEw&pid=Api&P=0&w=295&h=189" alt="..." style="width: 250x; height: 174px" >
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -175,7 +180,7 @@
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="https://media.baoquangninh.com.vn/dataimages/201108/original/images607185_giay_bao.jpg" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">

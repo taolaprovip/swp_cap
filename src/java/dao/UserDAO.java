@@ -5,11 +5,13 @@
  */
 package dao;
 
+import dto.ProductDTO;
 import dto.UserDTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import taint.utils.DBUtils;
 
@@ -71,6 +73,54 @@ public class UserDAO {
             }
         }
         return user;
+    }
+
+//    phone, fullName, Email, gender, DOB, userID
+    public boolean updateAccountProfile(String phone, String fullName, String email, String gender, String DOB, String userID) throws SQLException, ClassNotFoundException {
+        boolean check = false;
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        try {
+
+            String sql = "UPDATE [dbo].[tblUsers]\n"
+                    + "                      SET\n"
+                    + "                         [phone] = ?\n"
+                    + "                         ,[fullName] = ?\n"
+                    + "                         \n"
+                    + "                         ,[email] = ?\n"
+                    + "                         ,[sex] = ?\n"
+                    + "                          ,[birthday] = ?\n"
+                    + "                          \n"
+                    + "                    WHERE [userID] = ?";
+            conn = DBUtils.getConnection();
+
+            if (conn != null) {
+                ptm = conn.prepareStatement(sql);
+                ptm.setString(1, phone);
+                ptm.setString(2, fullName);
+                ptm.setString(3, email);
+                ptm.setString(4, gender);
+                ptm.setString(5, DOB);
+                ptm.setString(6, userID);
+//                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+//                String importDate = formatter.format(prd.getImportDate());
+//                String usingDate = formatter.format(prd.getUsingDate());
+//                ptm.setString(6, importDate);
+//                ptm.setString(7, usingDate);
+//                ptm.setString(8, "Approve");
+//                ptm.setString(9, prd.getProductID());
+                check = ptm.executeUpdate() > 0;
+            }
+        } catch (SQLException e) {
+        } finally {
+            if (ptm != null) {
+                ptm.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return check;
     }
 
     public boolean createUser(String userID, String phone, String fullName, String password, String email, String sex, String birthday, String roleID) throws SQLException, ClassNotFoundException {
