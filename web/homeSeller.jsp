@@ -22,7 +22,7 @@
         <%
             String fullName = "";
             UserDTO loginUser = (UserDTO) session.getAttribute("LOGIN_USER");
-            if (loginUser == null || !loginUser.getRolID().trim().equals("NB")) {
+            if (loginUser == null || !loginUser.getRolID().trim().equals("SEL")) {
                 loginUser = new UserDTO();
                 response.sendRedirect("login.jsp");
                 return;
@@ -119,10 +119,10 @@
             if (listProduct != null) {
 //                   List<ProductDTO> listSearchProduct = (List<ProductDTO>) request.getAttribute("LIST_SEARCH_PRODUCT");
 
-                String search = (String) request.getParameter("searchProduct");
-                if (search == null) {
-                    search = "";
-                }
+//                String search = (String) request.getParameter("searchProduct");
+//                if (search == null) {
+//                    search = "";
+//                }
 
         %>
 
@@ -134,10 +134,10 @@
 
 
             <div class="container px-4 px-lg-5 mt-5">
-                <form action="Maincontroller" style="text-align: center"  >
-                    <input type="text" name="searchProduct" value="<%=search%>">
+<!--                <form action="Maincontroller" style="text-align: center"  >
+                    <input type="text" name="searchProduct" value="<>">
                     <input type="submit" value="Search Product By Name" name="btAction"/>
-                </form>
+                </form>-->
 
                 <br>
                 <%String alert = (String) request.getAttribute("SUCCESS_ADD_DETAIL");
@@ -163,14 +163,16 @@
                                     <h5 class="fw-bolder"><%=listProduct.get(i).getProductName()%></h5>
                                     <!-- Product price-->
                                     <%=listProduct.get(i).getProductDesc()%>
+                                    <br>
+                                     <%=listProduct.get(i).getProductPrice()%>
                                 </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="productDetail.jsp?productID=<%=listProduct.get(i).getProductID()%>&productName=<%=listProduct.get(i).getProductName()%>&productImg=<%=listProduct.get(i).getProductImg()%>&productDesc=<%=listProduct.get(i).getProductDesc()%>">Product Detail</a></div>
+                                <!--<div class="text-center"><a class="btn btn-outline-dark mt-auto" href="productDetail.jsp?productID=<%=listProduct.get(i).getProductID()%>&productName=<%=listProduct.get(i).getProductName()%>&productImg=<%=listProduct.get(i).getProductImg()%>&productDesc=<%=listProduct.get(i).getProductDesc()%>">Product Detail</a></div>-->
                             </div>
                         </div>
-                    </div>0
+                    </div>
 
                     <% }%>
 

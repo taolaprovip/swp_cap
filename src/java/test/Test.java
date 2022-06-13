@@ -29,7 +29,7 @@ public class Test {
         System.out.println(d2.getListProductBeSell());
 //        OrderDAO d3 = new OrderDAO();
 //        System.out.println(d3.getListOrderByUserID("test"));
-        UserDAO dao = new UserDAO();
+//        UserDAO dao = new UserDAO();
 //        System.out.println(dao.updateAccountProfile("123", "testupdate", "test@", "female", "2020-2-2", "xung1985"));
     }
 }

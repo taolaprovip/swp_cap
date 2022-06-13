@@ -15,18 +15,18 @@ public class ProductDTO {
     private String productName;
     private String productDesc;
     private String productImg;
-//    private float productPrice;
-    private String userID;
+    private float productPrice;
+//    private String userID;
 
     public ProductDTO() {
     }
 
-    public ProductDTO(String productID, String productName, String productDesc, String productImg, String userID) {
+    public ProductDTO(String productID, String productName, String productDesc, String productImg, float productPrice) {
         this.productID = productID;
         this.productName = productName;
         this.productDesc = productDesc;
         this.productImg = productImg;
-        this.userID = userID;
+        this.productPrice = productPrice;
     }
 
     public String getProductID() {
@@ -61,20 +61,17 @@ public class ProductDTO {
         this.productImg = productImg;
     }
 
-    public String getUserID() {
-        return userID;
+    public float getProductPrice() {
+        return productPrice;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setProductPrice(float productPrice) {
+        this.productPrice = productPrice;
     }
 
     @Override
     public String toString() {
-        return getProductID() + " " +getUserID() + " " +getProductImg();
+        return getProductID() + " " + " " + getProductImg();
     }
-    
-    
-    
 
 }

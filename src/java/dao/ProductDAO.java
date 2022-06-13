@@ -31,8 +31,9 @@ public class ProductDAO {
                     + "      ,[productName]\n"
                     + "      ,[description]\n"
                     + "      ,[image]\n"
-                    + "      ,[userID]\n"
+                    + "      ,[price]\n"
                     + "  FROM [dbo].[tblProduct]";
+            
             conn = DBUtils.getConnection();
             if (conn != null) {
                 ptm = conn.prepareStatement(sql);
@@ -42,11 +43,12 @@ public class ProductDAO {
                     String productName = rs.getString("productName");
                     String description = rs.getString("description");
                     String image = rs.getString("image");
-                    String userID = rs.getString("userID");
+                    float price = rs.getFloat("price");
 
-                    listProduct.add(new ProductDTO(productID, productName, description, image, userID));
-                    
-//                    String productID, String productName, String productDesc, String productImg, String userID) 
+                    listProduct.add(new ProductDTO(productID, productName, description, image, price));
+//                    listProduct.add(new ProductDTO(productID, productName, productName, productID, price)
+                    //                    ring productID, String productName, String productDesc, String productImg, float productPrice) {
+                    //                    String productID, String productName, String productDesc, String productImg, String userID) 
                 }
             }
         } catch (Exception e) {
@@ -90,7 +92,7 @@ public class ProductDAO {
                     String image = rs.getString("image");
                     String userID = rs.getString("userID");
 
-                    listProduct.add(new ProductDTO(productID, productName, productName, productID, userID));
+//                    listProduct.add(new ProductDTO(productID, productName, productName, productID, userID));
                 }
             }
         } catch (Exception e) {
@@ -108,6 +110,5 @@ public class ProductDAO {
         }
         return listProduct;
     }
-    
-    
+
 }

@@ -5,33 +5,27 @@
  */
 package dto;
 
-import java.util.Date;
-
 /**
  *
- * @author Admin
+ * @author 2uang
  */
 public class Order {
-
+    
     private String orderID;
     private String userID;
     private String location;
     private String orderDate;
-    private String productID;
+    private String status;
 
     public Order() {
     }
-    
-    public Order(String userID){
-        this.userID=userID;
-    }
 
-    public Order(String orderID, String userID, String location, String orderDate, String productID) {
+    public Order(String orderID, String userID, String location, String orderDate, String status) {
         this.orderID = orderID;
         this.userID = userID;
         this.location = location;
         this.orderDate = orderDate;
-        this.productID = productID;
+        this.status = status;
     }
 
     public String getOrderID() {
@@ -66,12 +60,19 @@ public class Order {
         this.orderDate = orderDate;
     }
 
-    public String getProductID() {
-        return productID;
+    public String getStatus() {
+        return status;
     }
 
-    public void setProductID(String productID) {
-        this.productID = productID;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return "Order{" + "orderID=" + orderID + ", userID=" + userID + ", location=" + location + ", orderDate=" + orderDate + ", status=" + status + '}';
+    }
+    
+    
+    
 }

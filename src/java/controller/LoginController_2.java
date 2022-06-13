@@ -53,9 +53,9 @@ public class LoginController_2 extends HttpServlet {
                 session.setAttribute("LOGIN_USER", loginUser);
                 String roleID = loginUser.getRolID();
 //                String status = loginUser.getStatus();
-                if (("NM").equalsIgnoreCase(roleID.trim())) {   // nguoi mua
+                if (("BU").equalsIgnoreCase(roleID.trim())) {   // nguoi mua
                     url = BUYER_PAGE;
-                } else if (roleID.trim().equalsIgnoreCase("NB")) {  // dang vi du la nguoi ban
+                } else if (roleID.trim().equalsIgnoreCase("SEL")) {  // dang vi du la nguoi ban
                     url = USER_PAGE;
                 } else {
                     request.setAttribute("ERROR_MESSAGE", "Your role is not support!");

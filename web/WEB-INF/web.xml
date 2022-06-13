@@ -4,9 +4,17 @@
         <servlet-name>Maincontroller</servlet-name>
         <servlet-class>controller.Maincontroller</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListOrder</servlet-name>
+        <servlet-class>controller.ListOrder</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Maincontroller</servlet-name>
         <url-pattern>/Maincontroller</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListOrder</servlet-name>
+        <url-pattern>/list-order</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

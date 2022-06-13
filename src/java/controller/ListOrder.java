@@ -8,21 +8,21 @@ package controller;
 import dao.OrderDAO;
 import dto.Order;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Admin
+ * @author 2uang
  */
-@WebServlet(name = "AddController", urlPatterns = {"/AddController"})
-public class AddController extends HttpServlet {
-
-    private static final String SUCCESS = "SearchSellerController";
-    private static final String FAIL = "error.jsp";
+public class ListOrder extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,35 +34,21 @@ public class AddController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        String url = FAIL;
         try {
-
-            String location = request.getParameter("location");
-            String orderDate = request.getParameter("orderDate");
-
-//            Order ord = new Order(null, userID, null, null, productID);
-            Order ord = new Order(userID, location, orderDate);
-            //  private String orderID;
-//    private String userID;
-//    private String location;
-//    private String orderDate;
-
-    OrderDAO dao = new OrderDAO();
-    boolean check = dao.insertOrder(ord);
-    if(check
-
-    
-        ){
-                url = SUCCESS;
-        request.setAttribute("SUCCESS_ADD_DETAIL", "success add detail");
-    }
-}
-catch (Exception e) {
-        }finally{
-            request.getRequestDispatcher(url).forward(request, response);
+           
+            List<Order> listOrders = new OrderDAO().getListOrder();
+            listOrders.forEach(a -> {
+                System.out.println(a);
+            });
+            request.setAttribute("listOrders", listOrders);
+            
+            request.getRequestDispatcher("homeBuyer.jsp").forward(request, response);
+            
+        } catch (Exception e) {
         }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -75,9 +61,13 @@ catch (Exception e) {
      * @throws IOException if an I/O error occurs
      */
     @Override
-        protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ListOrder.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -89,9 +79,13 @@ catch (Exception e) {
      * @throws IOException if an I/O error occurs
      */
     @Override
-        protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ListOrder.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -100,7 +94,7 @@ catch (Exception e) {
      * @return a String containing servlet description
      */
     @Override
-        public String getServletInfo() {
+    public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
